@@ -22,8 +22,10 @@ class ServerSide
         $LOG.debug("Client connected to server")
         message = client.gets
         $LOG.debug("Gets data from client")
-        doc = Document.new
-        data =  doc.parceDocument(message)
+        doc = Document.new(message)
+        doc.saveMessage(message)
+        
+        client.puts(data,0)
         $LOG.debug("Server gets that data: #{data}")
         client.close
       end

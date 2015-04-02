@@ -4,7 +4,7 @@ require 'json'
 require 'logger'
 require_relative 'doc.rb'
 
-$LOG = Logger.new('/home/nkraev/tmp/application.log','monthly')
+$LOG = Logger.new('/var/log/application.log','monthly')
 $LOG.level = Logger::DEBUG
 
 class ClientSide
